@@ -1,7 +1,7 @@
 import cv2 as cv
 
 # Reading Videos
-capture = cv.VideoCapture("D:\\bihar.mp4")  # 0, 1, 2 == camera devices
+capture = cv.VideoCapture(0)  # 0, 1, 2 == camera devices
 
 while True:
     isTrue, frame = capture.read()
