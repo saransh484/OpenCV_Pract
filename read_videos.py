@@ -1,15 +1,15 @@
 import cv2 as cv
 
 # Reading Videos
-capture2 = cv.VideoCapture("C:\\Users\\smara\\Downloads\\Video\\demonslayer.mp4")  # 0, 1, 2 == camera devices
+# capture = cv.VideoCapture("C:\\Users\\smara\\Downloads\\Video\\demonslayer.mp4")  # 0, 1, 2 == camera devices
 capture = cv.VideoCapture(0)
 
 while True:
     isTrue, frame = capture.read()
     canny = cv.Canny(frame, 50,100)
     # blur = cv.GaussianBlur(canny, (5,5),0)
-    hsv = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
-    cv.imshow("Video", hsv)
+    # hsv = cv.cvtColor(canny, cv.COLOR_BGR2HSV_FULL)
+    cv.imshow("Video", canny)
 
     if cv.waitKey(20) & 0xFF == ord('q'):
         break
