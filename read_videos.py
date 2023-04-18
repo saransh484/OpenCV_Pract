@@ -1,13 +1,17 @@
 import cv2 as cv
 
 # Reading Videos
-capture = cv.VideoCapture(0)  # 0, 1, 2 == camera devices
+capture2 = cv.VideoCapture("C:\\Users\\smara\\Downloads\\Video\\demonslayer.mp4")  # 0, 1, 2 == camera devices
+capture = cv.VideoCapture(0)
 
 while True:
     isTrue, frame = capture.read()
-    cv.imshow("Video", frame)
+    canny = cv.Canny(frame, 50,100)
+    # blur = cv.GaussianBlur(canny, (5,5),0)
+    hsv = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
+    cv.imshow("Video", hsv)
 
-    if cv.waitKey(20) & 0xFF == ord('d'):
+    if cv.waitKey(20) & 0xFF == ord('q'):
         break
 
 capture.release()

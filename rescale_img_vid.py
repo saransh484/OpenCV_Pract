@@ -10,7 +10,7 @@ def rescale(frame, scale=0.75):
     return cv.resize(frame, dimensions, interpolation=cv.INTER_AREA)
 
 
-img = cv.imread("D:\\81g4h40e2c471.jpg")
+img = cv.imread("C:\\Users\\smara\\Downloads\\wall-01.png")
 
 resized = rescale(img, 0.2)
 

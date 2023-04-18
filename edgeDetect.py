@@ -8,8 +8,7 @@ while True:
     canny = cv.Canny(img,i,i*2)
     cv.imshow("Edges", canny)
     i -= 10
-    if cv.waitKey(20) & 0XFF == ord('d'):
+    if cv.waitKey(20) & 0XFF == ord('q'):
         break
-        
 
 cv.destroyAllWindows()
